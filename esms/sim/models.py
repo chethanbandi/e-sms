@@ -20,9 +20,8 @@ RELATIONSHIP_CHOICES = (
 	('father', 'Father'),
 )
 
-class College(models.Model):
-	name = models.CharField('name of the college', max_length=100)
-	short_name = models.CharField('college short name', max_length=5, blank=True)
+
+class Address(models.Model):
 	address1 = models.CharField(max_length=50)
 	address2 = models.CharField(max_length=50, blank=True)
 	city = models.CharField(max_length=20)
@@ -30,6 +29,14 @@ class College(models.Model):
 	country = models.CharField(max_length=20)
 	email = models.EmailField(max_length=75)
 	phone1 = models.IntegerField('primary phone')
+
+	class Meta:
+		abstract = True
+
+
+class College(Address):
+	name = models.CharField('name of the college', max_length=100)
+	short_name = models.CharField('college short name', max_length=5, blank=True)
 	phone2 = models.IntegerField('secondary phone', blank=True)
 
 	def __unicode__(self):
@@ -51,17 +58,10 @@ class EmployeeInfo(models.Model):
 
 	full_name = property(_get_full_name)
 
-class StudentInfo(models.Model):
+class StudentInfo(Address):
 	first_name = models.CharField(max_length=50)
 	last_name = models.CharField(max_length=50)
 	middle_name = models.CharField(max_length=50, blank=True)
-	address1 = models.CharField(max_length=50)
-	address2 = models.CharField(max_length=50, blank=True)
-	city = models.CharField(max_length=20)
-	state = models.CharField(max_length=20)
-	country = models.CharField(max_length=20)
-	email = models.EmailField(max_length=75, blank=True)
-	phone = models.IntegerField(blank=True)
 	sex = models.CharField(max_length=1, choices=GENDER_CHOICES)
 	nationality = models.CharField(max_length=30)
 	caste = models.CharField(max_length=4, choices=CASTE_CHOICES)
