@@ -1,5 +1,10 @@
 # Django settings for esms project.
 
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = BASE_DIR
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -10,7 +15,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASE_ENGINE = 'django.db.backends.sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = 'c:/e-sms/esms/esms.db'             # Or path to database file if using sqlite3.
+DATABASE_NAME = '%s/esms.db' % PROJECT_DIR            # Or path to database file if using sqlite3.
 DATABASE_USER = ''             # Not used with sqlite3.
 DATABASE_PASSWORD = ''         # Not used with sqlite3.
 DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
@@ -69,7 +74,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    'c:/e-sms/esms/templates',
+    '%s/templates' % PROJECT_DIR,
 )
 
 INSTALLED_APPS = (
