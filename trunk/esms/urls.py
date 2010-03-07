@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import *
+from esms.settings import DEBUG, PROJECT_DIR
 
-# Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
@@ -17,3 +17,9 @@ urlpatterns = patterns('',
     (r'^sim/', 'esms.sim.views.sim_home'),
     (r'^admin/', include(admin.site.urls)),
 )
+
+if DEBUG:
+    urlpatterns += patterns('',
+            (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '%s/www/site_media' % PROJECT_DIR, 'show_indexes': True}),
+    )
+
