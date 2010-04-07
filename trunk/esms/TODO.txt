@@ -1,0 +1,4 @@
+1. Create main Layout (No Ajax, CSS)
+2. create a Menu with AJAX
+3. create form with AJAX
+4. Add CSS stying to all of them
