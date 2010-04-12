@@ -10,7 +10,7 @@
 	
 	<g:DockLayoutPanel unit='EM'>
 		<g:north size='4'>
-			<g:Label>e School Management System</g:Label>
+			<g:Label ui:field="errorMsgLabel" />
 		</g:north>
 		
 		<g:west size='16'>
