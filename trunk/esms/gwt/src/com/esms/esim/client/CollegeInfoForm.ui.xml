@@ -1,0 +1,52 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+		.important {
+			font-weight: bold;
+		}
+	</ui:style>
+	<g:HTMLPanel>
+		<g:HorizontalPanel>
+			<g:Label>Name</g:Label>
+			<g:TextBox ui:field="name" />
+		</g:HorizontalPanel>
+		<g:HorizontalPanel>
+			<g:Label>Short Name</g:Label>
+			<g:TextBox ui:field="shortName" />
+		</g:HorizontalPanel>
+		<g:HorizontalPanel>
+			<g:Label>Address1</g:Label>
+			<g:TextBox ui:field="address1" />
+		</g:HorizontalPanel>
+		<g:HorizontalPanel>
+			<g:Label>Address2</g:Label>
+			<g:TextBox ui:field="address2" />
+		</g:HorizontalPanel>
+		<g:HorizontalPanel>
+			<g:Label>City</g:Label>
+			<g:TextBox ui:field="city" />
+		</g:HorizontalPanel>
+		<g:HorizontalPanel>
+			<g:Label>State</g:Label>
+			<g:TextBox ui:field="state" />
+		</g:HorizontalPanel>
+		<g:HorizontalPanel>
+			<g:Label>Country</g:Label>
+			<g:TextBox ui:field="country" />
+		</g:HorizontalPanel>
+		<g:HorizontalPanel>
+			<g:Label>EMail</g:Label>
+			<g:TextBox ui:field="email" />
+		</g:HorizontalPanel>
+		<g:HorizontalPanel>
+			<g:Label>Phone1</g:Label>
+			<g:TextBox ui:field="phone1" />
+		</g:HorizontalPanel>
+		<g:HorizontalPanel>
+			<g:Label>Phone2</g:Label>
+			<g:TextBox ui:field="phone2" />
+		</g:HorizontalPanel>
+		<g:Button styleName="{style.important}" ui:field="button" />
+	</g:HTMLPanel>
+</ui:UiBinder> 

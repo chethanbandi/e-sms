@@ -1,16 +1,11 @@
 from django.http import HttpResponse
 from django.core import serializers
-from django.shortcuts import render_to_response
-from django.template import loader, Context
+
+from sim.models import College
 
 def sim_home(request):
-    """
-    t = loader.get_template('sim/index.html')
-    c = Context()
-    data = serializers.serialize("json", t.render(c))
+    json_serializer = serializers.get_serializer("json")()
+    queryset = College.objects.all()
+    data = json_serializer.serialize(queryset)
     return HttpResponse(data, mimetype="application/javascript")
-    #return HttpResponse(t.render(c))
-    #return HttpResponse(t)
-    """
-    return render_to_response("sim/index.html", {})
 
