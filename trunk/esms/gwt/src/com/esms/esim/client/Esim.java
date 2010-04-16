@@ -12,8 +12,8 @@ import com.google.gwt.http.client.URL;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
+import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 
@@ -29,7 +29,7 @@ public class Esim implements EntryPoint {
 	private static final String JSON_URL = "http://127.0.0.1:8080/mysite.fcgi/sim/";
 	//private static final String JSON_URL = GWT.getModuleBaseURL() + "mysite.fcgi/sim/";
 	
-	@UiField LayoutPanel content;
+	@UiField ScrollPanel content;
 	@UiField Label errorMsgLabel;
 	
 	public void onModuleLoad(){

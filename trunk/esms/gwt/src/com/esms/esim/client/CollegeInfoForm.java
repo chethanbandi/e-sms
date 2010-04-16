@@ -7,10 +7,13 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.FormPanel;
+import com.google.gwt.user.client.ui.SubmitButton;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
+import com.google.gwt.user.client.ui.FormPanel.SubmitCompleteEvent;
+import com.google.gwt.user.client.ui.FormPanel.SubmitEvent;
 import com.google.gwt.http.client.Request;
 import com.google.gwt.http.client.RequestBuilder;
 import com.google.gwt.http.client.RequestException;
@@ -27,8 +30,10 @@ public class CollegeInfoForm extends Composite {
 	interface CollegeInfoFormUiBinder extends UiBinder<Widget, CollegeInfoForm> {
 	}
 
-	private final String JSON_URL = URL.encode("http://127.0.0.1:8080/mysite.fcgi/sim/");
+	//private final String JSON_URL = URL.encode("http://127.0.0.1:8080/mysite.fcgi/sim/");
+	private final String JSON_URL = URL.encode("http://127.0.0.1:8080/mysite.fcgi/sim_form/");
 	
+	@UiField FormPanel form;
 	@UiField TextBox name;
 	@UiField TextBox shortName;
 	@UiField TextBox address1;
@@ -39,20 +44,39 @@ public class CollegeInfoForm extends Composite {
 	@UiField TextBox email;
 	@UiField TextBox phone1;
 	@UiField TextBox phone2;
-	@UiField Button button;
+	@UiField SubmitButton button;
 
 	public CollegeInfoForm() {
 		initWidget(uiBinder.createAndBindUi(this));
-		button.setText("Submit");
+		form.setAction(JSON_URL);
+		form.setMethod(FormPanel.METHOD_POST);
+		
+		form.addSubmitHandler(new FormPanel.SubmitHandler() {
+			public void onSubmit(SubmitEvent event) {
+				Window.alert(name.getText());
+				// Perform custom validations
+			}
+		});
+		
+		form.addSubmitCompleteHandler(new FormPanel.SubmitCompleteHandler() {
+			public void onSubmitComplete(SubmitCompleteEvent event) {
+				// On submission of the form the results are handled here
+				Window.alert(event.getResults());
+			}
+		});
 	}
 
 	@UiHandler("button")
 	void onClick(ClickEvent e) {
-		createCollege();
+		form.submit();
+		//createCollege();
 	}
 	
 	private void createCollege(){
 		RequestBuilder builder = new RequestBuilder(RequestBuilder.POST, JSON_URL);
+		builder.setHeader("", "");
+		
+		//TODO: build json request object
 		
 		try{
 			Request request = builder.sendRequest(null, new RequestCallback(){
@@ -82,9 +106,8 @@ public class CollegeInfoForm extends Composite {
 	}-*/;
 	
 	private void processResponse(JsArray<ServerResponseJson> responseJson) {
-		ServerResponseJson response = responseJson.get(0);
-		if (response.SUCCESS != response.getCode()) {
-			
-		}
+		//ServerResponseJson response = responseJson.get(0);
+		//if (response.SUCCESS != response.getCode()) {
+		//}
 	}
 }
