@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     (r'^$', 'esms.views.sms_home'),
     (r'^sim/', 'esms.sim.views.sim_home'),
+    (r'^sim_form/', 'esms.sim.views.createCollege'),
     (r'^admin/', include(admin.site.urls)),
 )
 
