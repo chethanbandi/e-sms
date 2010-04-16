@@ -6,47 +6,39 @@
 			font-weight: bold;
 		}
 	</ui:style>
-	<g:HTMLPanel>
-		<g:HorizontalPanel>
-			<g:Label>Name</g:Label>
-			<g:TextBox ui:field="name" />
-		</g:HorizontalPanel>
-		<g:HorizontalPanel>
-			<g:Label>Short Name</g:Label>
-			<g:TextBox ui:field="shortName" />
-		</g:HorizontalPanel>
-		<g:HorizontalPanel>
-			<g:Label>Address1</g:Label>
-			<g:TextBox ui:field="address1" />
-		</g:HorizontalPanel>
-		<g:HorizontalPanel>
-			<g:Label>Address2</g:Label>
-			<g:TextBox ui:field="address2" />
-		</g:HorizontalPanel>
-		<g:HorizontalPanel>
-			<g:Label>City</g:Label>
-			<g:TextBox ui:field="city" />
-		</g:HorizontalPanel>
-		<g:HorizontalPanel>
-			<g:Label>State</g:Label>
-			<g:TextBox ui:field="state" />
-		</g:HorizontalPanel>
-		<g:HorizontalPanel>
-			<g:Label>Country</g:Label>
-			<g:TextBox ui:field="country" />
-		</g:HorizontalPanel>
-		<g:HorizontalPanel>
-			<g:Label>EMail</g:Label>
-			<g:TextBox ui:field="email" />
-		</g:HorizontalPanel>
-		<g:HorizontalPanel>
-			<g:Label>Phone1</g:Label>
-			<g:TextBox ui:field="phone1" />
-		</g:HorizontalPanel>
-		<g:HorizontalPanel>
-			<g:Label>Phone2</g:Label>
-			<g:TextBox ui:field="phone2" />
-		</g:HorizontalPanel>
-		<g:Button styleName="{style.important}" ui:field="button" />
-	</g:HTMLPanel>
+	<g:FormPanel ui:field="form">
+		<g:HTMLPanel>
+			<g:Label text="Name" />
+			<g:TextBox ui:field="name" name="name" />
+			
+			<g:Label text="Short Name" />
+			<g:TextBox ui:field="shortName" name="shortName" />
+			
+			<g:Label text="Address1" />
+			<g:TextBox ui:field="address1" name="address1" />
+			
+			<g:Label text="Address2" />
+			<g:TextBox ui:field="address2" name="address2" />
+			
+			<g:Label text="City" />
+			<g:TextBox ui:field="city" name="city" />
+			
+			<g:Label text="State" />
+			<g:TextBox ui:field="state" name="state" />
+			
+			<g:Label text="Country" />
+			<g:TextBox ui:field="country" name="country" />
+			
+			<g:Label text="EMail" />
+			<g:TextBox ui:field="email" name="email" />
+			
+			<g:Label text="Phone1" />
+			<g:TextBox ui:field="phone1" name="phone1" />
+			
+			<g:Label text="Phone2" />
+			<g:TextBox ui:field="phone2" name="phone2" />
+			
+			<g:SubmitButton styleName="{style.important}" ui:field="button" text="Submit" />
+		</g:HTMLPanel>
+	</g:FormPanel>
 </ui:UiBinder> 

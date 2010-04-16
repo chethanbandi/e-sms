@@ -23,7 +23,7 @@
 		</g:west>
 		
 		<g:center>
-			<g:LayoutPanel ui:field="content" />
+			<g:ScrollPanel ui:field="content" />
 		</g:center>
 	<!-- 	
 		<g:south size='4'>
