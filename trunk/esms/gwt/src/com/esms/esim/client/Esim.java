@@ -4,8 +4,6 @@ import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.user.client.ui.HasHorizontalAlignment;
-import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -21,12 +19,9 @@ public class Esim implements EntryPoint {
 	
 	@UiField ScrollPanel content;
 	@UiField ScrollPanel menu;
-	@UiField HorizontalPanel sessionControls;
-	
+
 	public void onModuleLoad(){
 		RootLayoutPanel.get().add(uiBinder.createAndBindUi(this));
-		
-		sessionControls.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_RIGHT);
 		
 		// Add menu to the DockLayoutPanel
 		menu.add(new Menu(content));
