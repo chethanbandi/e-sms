@@ -10,25 +10,28 @@
 	
 	<g:DockLayoutPanel unit='EM'>
 		<g:north size='4'>
-			<g:Label ui:field="errorMsgLabel" />
+			<g:HorizontalPanel horizontalAlignment="ALIGN_LEFT">
+				<g:HorizontalPanel>
+					<g:Label ui:field="head" text="e Student Management System" />
+				</g:HorizontalPanel>
+				<g:HorizontalPanel ui:field="sessionControls" horizontalAlignment="ALIGN_RIGHT">
+					<g:Hyperlink text="Logout" />
+					<g:Hyperlink text="Switch Role" />
+				</g:HorizontalPanel>
+			</g:HorizontalPanel>
 		</g:north>
 		
 		<g:west size='16'>
-			<g:HTML>
-				<ul>
-					<li>Link 1</li>
-					<li>Link 2</li>
-				</ul>
-			</g:HTML>
+			<g:ScrollPanel ui:field="menu" />
 		</g:west>
 		
 		<g:center>
 			<g:ScrollPanel ui:field="content" />
 		</g:center>
-	<!-- 	
+		
 		<g:south size='4'>
-			<g:Label>footer</g:Label>
+			<g:Label ui:field="footer" text="footer" />
 		</g:south>
-	-->
+
 	</g:DockLayoutPanel>
 </ui:UiBinder> 
