@@ -10,13 +10,14 @@
 	
 	<g:DockLayoutPanel unit='EM'>
 		<g:north size='4'>
-			<g:HorizontalPanel horizontalAlignment="ALIGN_LEFT">
-				<g:HorizontalPanel>
+			<g:HorizontalPanel horizontalAlignment="ALIGN_LEFT" width="100%" >
+				<g:HorizontalPanel width="100%">
 					<g:Label ui:field="head" text="e Student Management System" />
 				</g:HorizontalPanel>
-				<g:HorizontalPanel ui:field="sessionControls" horizontalAlignment="ALIGN_RIGHT">
-					<g:Hyperlink text="Logout" />
+				<g:HorizontalPanel horizontalAlignment="ALIGN_RIGHT" width="100%">
 					<g:Hyperlink text="Switch Role" />
+					<g:Hyperlink text="Update Profile" />
+					<g:Hyperlink text="Logout" />
 				</g:HorizontalPanel>
 			</g:HorizontalPanel>
 		</g:north>
