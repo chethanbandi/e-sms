@@ -1,17 +1,21 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-	xmlns:g="urn:import:com.google.gwt.user.client.ui">
-	<ui:style>
-		.important {
-			font-weight: bold;
-		}
-	</ui:style>
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:u="urn:import:com.esms.utils.client.ui">
+	
+	<ui:style type='com.esms.esim.client.CollegeInfoForm.MyStyle'>
+		.important { font-weight: bold;	}
+    	.redBox { background-color:pink; border: 1px solid red; }
+    	.enabled { color:black; }
+    	.disabled { color:gray; }
+  	</ui:style>
+  	
 	<g:FormPanel ui:field="form">
 		<g:HTMLPanel>
 			<table>
 				<tr>
 					<td><g:Label text="Name" /></td>
-					<td><g:TextBox ui:field="name" name="name" /></td>
+					<td><u:VTextBox ui:field="name" name="name" minLength="3" /></td>
 				</tr>
 				
 				<tr>
