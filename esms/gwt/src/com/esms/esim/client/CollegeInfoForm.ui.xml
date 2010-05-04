@@ -3,13 +3,6 @@
 	xmlns:g="urn:import:com.google.gwt.user.client.ui"
 	xmlns:u="urn:import:com.esms.utils.client.ui">
 	
-	<ui:style type='com.esms.esim.client.CollegeInfoForm.MyStyle'>
-		.important { font-weight: bold;	}
-    	.redBox { background-color:pink; border: 1px solid red; }
-    	.enabled { color:black; }
-    	.disabled { color:gray; }
-  	</ui:style>
-  	
 	<g:FormPanel ui:field="form">
 		<g:HTMLPanel>
 			<table>
@@ -20,52 +13,52 @@
 				
 				<tr>
 					<td><g:Label text="Short Name" /></td>
-					<td><g:TextBox ui:field="shortName" name="shortName" /></td>
+					<td><u:VTextBox ui:field="shortName" name="shortName" /></td>
 				</tr>
 				
 				<tr>
 					<td><g:Label text="Address1" /></td>
-					<td><g:TextBox ui:field="address1" name="address1" /></td>
+					<td><u:VTextBox ui:field="address1" name="address1" /></td>
 				</tr>
 				
 				<tr>
 					<td><g:Label text="Address2" /></td>
-					<td><g:TextBox ui:field="address2" name="address2" /></td>
+					<td><u:VTextBox ui:field="address2" name="address2" /></td>
 				</tr>
 				
 				<tr>
 					<td><g:Label text="City" /></td>
-					<td><g:TextBox ui:field="city" name="city" /></td>
+					<td><u:VTextBox ui:field="city" name="city" /></td>
 				</tr>
 				
 				<tr>
 					<td><g:Label text="State" /></td>
-					<td><g:TextBox ui:field="state" name="state" /></td>
+					<td><u:VTextBox ui:field="state" name="state" /></td>
 				</tr>
 				
 				<tr>
 					<td><g:Label text="Country" /></td>
-					<td><g:TextBox ui:field="country" name="country" /></td>
+					<td><u:VTextBox ui:field="country" name="country" /></td>
 				</tr>
 				
 				<tr>
 					<td><g:Label text="EMail" /></td>
-					<td><g:TextBox ui:field="email" name="email" /></td>
+					<td><u:VTextBox ui:field="email" name="email" /></td>
 				</tr>
 				
 				<tr>
 					<td><g:Label text="Phone1" /></td>
-					<td><g:TextBox ui:field="phone1" name="phone1" /></td>
+					<td><u:VTextBox ui:field="phone1" name="phone1" /></td>
 				</tr>
 				
 				<tr>
 					<td><g:Label text="Phone2" /></td>
-					<td><g:TextBox ui:field="phone2" name="phone2" /></td>
+					<td><u:VTextBox ui:field="phone2" name="phone2" /></td>
 				</tr>
 				
 				<tr>
 					<td />
-					<td align="right"><g:SubmitButton styleName="{style.important}" ui:field="button" text="Save" /></td>
+					<td align="right"><g:SubmitButton ui:field="button" text="Save" /></td>
 				</tr>
 			</table>
 		</g:HTMLPanel>

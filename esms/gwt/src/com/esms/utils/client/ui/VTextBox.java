@@ -16,6 +16,7 @@ public class VTextBox extends TextBox implements FocusHandler, ChangeHandler {
 	public VTextBox() {
 		this.addFocusHandler(this);
 		this.addChangeHandler(this);
+		//this.addStyleName("yellowBox");
 	}
 	
 	@Override
@@ -25,11 +26,13 @@ public class VTextBox extends TextBox implements FocusHandler, ChangeHandler {
 	
 	@Override
 	public void onChange(ChangeEvent event) {
-		// TODO Auto-generated method stub
 		if( !isValid() ) {
-			this.setText("Invalid values");
-			//this.addStyleName("background-color:pink; border: 1px solid red;");
-		}		
+			//this.removeStyleName("yellowBox");
+			this.addStyleName("redBox");
+			return;
+		}
+		this.removeStyleName("redBox");
+		//this.addStyleName("yellowBox");
 	}
 	
 	public void setWaterMark(String _waterMark) {
@@ -44,8 +47,7 @@ public class VTextBox extends TextBox implements FocusHandler, ChangeHandler {
 	
 	private boolean isValid() {
 		if(checkMinLength) {
-			int length = this.getText().length();
-			if(length < this.minLength ) {
+			if(this.getText().length() < this.minLength ) {
 				return false;
 			}
 		}
