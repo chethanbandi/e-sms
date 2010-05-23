@@ -32,3 +32,10 @@ h1 {
 #closeButton {
   margin: 15px 6px 6px;
 }
+
+.redBox { background-color:pink; /* border: 1px solid red; */}
+.yellowBox { background-color:yellow; /* border: 1px solid red; */}
+.important { font-weight: bold;	}
+.enabled { color:black; }
+.disabled { color:gray; }
+
